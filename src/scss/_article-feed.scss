@@ -1,0 +1,25 @@
+.article-feed {
+    grid-area: main;
+    margin-right: 4rem;
+    width: 65vw;
+
+    &__header {
+        font-size: 2rem;
+        color: $fourth-color;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        color: $third-color;
+    }
+
+    &__author {
+        font-size: .9rem;
+    }
+
+    &__content {
+        font-size: 1rem;
+        text-align: justify;
+    }
+}

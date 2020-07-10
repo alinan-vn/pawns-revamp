@@ -1,0 +1,21 @@
+@import './variables';
+@import './nav';
+@import './footer';
+@import './sidebar';
+@import './landing';
+@import './article-feed';
+@import './article.scss';
+
+body {
+    background-color: $primary-color;
+    // overflow: auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    color: $fourth-color;
+}
+

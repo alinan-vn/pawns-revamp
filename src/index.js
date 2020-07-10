@@ -1,17 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import rootReducer from './Reducers/rootReducer'
+// import PawnsLogo from './Images/pawnsOutline.png'
+
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Nav from './Components/global/nav/index';
+import Footer from './Components/global/footer/index';
+
+
+const store = createStore(
+    rootReducer, 
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Provider store={ store }>
+        <Nav />
+        <App />
+        <Footer />
+    </Provider>
+    , 
+    document.getElementById('root')
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

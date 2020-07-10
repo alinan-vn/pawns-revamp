@@ -1,0 +1,18 @@
+$primary-color: #ffeecf;
+$secondary-color: #f5c181;
+$third-color: #00a79d;
+$fourth-color: #007065;
+
+$nav-font: 'Roboto', sans-serif;
+
+@mixin slow-transition {
+    transition: all 1s ease-in-out;
+}
+
+@mixin medium-transition {
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin fast-transition {
+    transition: all 0.15s ease-in-out;
+}
