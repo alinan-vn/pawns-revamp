@@ -4,17 +4,12 @@ import { dateFilter } from '../../functions/index';
 import Comments from './comments/index';
 
 class Article extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            article: null
-        }
-    }
-
+    
     setArticle = () => {
         let id = this.props.history.location.pathname
         id = id.split('/')[2]
         id = parseInt(id)
+
         let article = this.props.articles.filter(article => article.id === id)
 
         if (article.length !== 0){
@@ -29,6 +24,10 @@ class Article extends React.Component {
                     <h3 className='article__author'>{card.author}</h3>
                     <h5 className='article__date'>{date}</h5>
                     <p className='article__text'>{card.content}</p>
+
+                    <hr />
+                
+                    <Comments articleId={id} />
                 </div>
             )
         }
@@ -38,10 +37,6 @@ class Article extends React.Component {
         return(
             <section className='article'>
                 { this.props.articles === [] ? <p>loading</p> : this.setArticle() }
-
-                <hr />
-                
-                <Comments />
             </section>
         )
     }
