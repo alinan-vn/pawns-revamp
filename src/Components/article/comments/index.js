@@ -4,7 +4,8 @@ class Comments extends React.Component {
     constructor(){
         super()
         this.state = {
-            comments: []
+            comments: [],
+            users: []
         }
     }
 
@@ -12,11 +13,49 @@ class Comments extends React.Component {
         fetch(`http://localhost:3000/get_votes_and_comments/${this.props.articleId}`)
         .then(resp => resp.json())
         .then(obj => {
-            // console.log('com', obj.comments)
-            this.setState({
-                ...this.state,
-                comments: obj.comments
-            })
+            console.log('com', obj.comments[0])
+            this.setCommentsUsers(obj.comments)
+        })
+    }
+
+    setCommentsUsers = commentsArray => {
+        this.setState({
+            ...this.state,
+            comments: commentsArray
+        })
+        commentsArray.forEach(comment => {
+            this.fetchUser(comment.user_id)
+        })
+    }
+
+    fetchUser = (id) => {
+        return fetch(`http://localhost:3000/users/${id}`)
+        .then(resp => resp.json())
+        .then(user => {
+            this.setUser(user)
+        })
+    }
+
+    setUser = user => {
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                users: [...prevState.users, user]
+            }
+        })
+    }
+
+    commentCard = () => {
+        return this.state.comments.map(comment => {
+            // console.log(this.state.users)
+            let user = this.state.users.find(user => comment.user_id === user.id)
+            console.log(user)
+            return(
+                <div key={comment.id} className='comments__comment'>
+                    <p>{user ? user.username : 'loading'}</p>
+                    <p>{comment.content}</p>
+                </div>
+            )
         })
     }
 
@@ -26,9 +65,9 @@ class Comments extends React.Component {
 
     render(){
         return(
-            <div>
-                COMMENTS
-            </div>
+            <section className='comments'>
+                { this.commentCard() }
+            </section>
         )
     }
 }

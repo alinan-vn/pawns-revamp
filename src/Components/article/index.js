@@ -14,7 +14,6 @@ class Article extends React.Component {
 
         if (article.length !== 0){
             let card = article[0]
-            console.log(card)
 
             const date = dateFilter(card.created_at)
 

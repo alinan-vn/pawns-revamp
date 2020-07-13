@@ -1,0 +1,11 @@
+.comments {
+    padding-top: 2rem;
+    width: 50vw;
+
+    &__comment {
+        padding: 1rem;
+        background-color: $fourth-color;
+        color: $secondary-color;
+        font-weight: bold;
+    }
+}
