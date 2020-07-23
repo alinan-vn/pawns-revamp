@@ -10,7 +10,7 @@ class Comments extends React.Component {
     }
 
     fetchComments = () => {
-        fetch(`http://localhost:3000/get_votes_and_comments/${this.props.articleId}`)
+        fetch(`https://enigmatic-gorge-45286.herokuapp.com/get_votes_and_comments/${this.props.articleId}`)
         .then(resp => resp.json())
         .then(obj => {
             console.log('com', obj.comments[0])
@@ -29,7 +29,7 @@ class Comments extends React.Component {
     }
 
     fetchUser = (id) => {
-        return fetch(`http://localhost:3000/users/${id}`)
+        return fetch(`https://enigmatic-gorge-45286.herokuapp.com/${id}`)
         .then(resp => resp.json())
         .then(user => {
             this.setUser(user)

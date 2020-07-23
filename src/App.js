@@ -15,7 +15,7 @@ import Article from './Components/article/index';
 class App extends React.Component {
 
   fetchArticles = () => {
-    fetch('http://localhost:3000/articles/')
+    fetch('https://enigmatic-gorge-45286.herokuapp.com/articles/')
     .then(resp => resp.json())
     .then(articles => this.props.saveArticles(articles))
   }

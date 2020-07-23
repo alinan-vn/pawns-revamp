@@ -11,7 +11,7 @@ const tokenValidation = (props) => {
             }
         }
 
-        fetch('http://localhost:3000/current_user', reqObj)
+        fetch('https://enigmatic-gorge-45286.herokuapp.com/current_user', reqObj)
         .then(resp => resp.json())
         .then(user => {
             // console.log('token to user', user)
