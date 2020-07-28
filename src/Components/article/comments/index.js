@@ -29,7 +29,7 @@ class Comments extends React.Component {
     }
 
     fetchUser = (id) => {
-        return fetch(`https://enigmatic-gorge-45286.herokuapp.com/${id}`)
+        return fetch(`https://enigmatic-gorge-45286.herokuapp.com/users/${id}`)
         .then(resp => resp.json())
         .then(user => {
             this.setUser(user)
@@ -47,9 +47,7 @@ class Comments extends React.Component {
 
     commentCard = () => {
         return this.state.comments.map(comment => {
-            // console.log(this.state.users)
             let user = this.state.users.find(user => comment.user_id === user.id)
-            console.log(user)
             return(
                 <div key={comment.id} className='comments__comment'>
                     <p>{user ? user.username : 'loading'}</p>

@@ -20,11 +20,11 @@ class ArticleFeed extends React.Component {
         } else {
             return this.props.articles.map((card, ind) => {
                 return(
-                    <div id={ind} className='article-feed__card'>
+                    <div key={ind} className='article-feed__card'>
                         <h1 className='article-feed__title'>{ card.title }</h1>
-                        <button onClick={() => this.handleArticle(card.id) }>Read More</button>
                         <h3 className='article-feed__author'>by { card.author }</h3>
                         <p className='article-feed__content'>{ this.contentReducer(card.content, 40) }...</p>
+                        <button className='article-feed__btn' onClick={() => this.handleArticle(card.id) }>Read More</button>
                     </div>
                 )
             })

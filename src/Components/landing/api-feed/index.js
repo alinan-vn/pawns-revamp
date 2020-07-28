@@ -20,7 +20,6 @@ class SideBarHomeFeed extends React.Component {
                 ...this.state,
                 articles: json.response.docs
             })
-            // this.setArticlesState(json.response.docs)
         })
     }
 
@@ -45,7 +44,7 @@ class SideBarHomeFeed extends React.Component {
             }
 
             return(
-                <div id={ind} className='sidebar__card'>
+                <div key={ind} className='sidebar__card'>
                     <img className='sidebar__card-image' src={imgUrl} />
                     <h1 className='sidebar__title'><a href={card.web_url} target='_blank'>{ this.contentReducer(card.headline.main, 4) }...</a></h1>
                     <h3 className='sidebar__author'>{ card.byline.original }</h3>
