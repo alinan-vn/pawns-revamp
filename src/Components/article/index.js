@@ -16,12 +16,20 @@ class Article extends React.Component {
             let card = article[0]
 
             const date = dateFilter(card.created_at)
+            const update = dateFilter(card.updated_at)
+            let text
+
+            if (date === update){
+                text = date
+            } else {
+                text = `${date}, updated at ${update}`
+            }
 
             return(
-                <div>
-                    <h1>{card.title}</h1>
-                    <h3 className='article__author'>{card.author}</h3>
-                    <h5 className='article__date'>{date}</h5>
+                <div className='article__card'>
+                    <h1 className='article__title'>{card.title}</h1>
+                    <h3 className='article__author'>written by {card.author}</h3>
+                    <h5 className='article__date'>{text}</h5>
                     <p className='article__text'>{card.content}</p>
 
                     <hr />
