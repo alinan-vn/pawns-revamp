@@ -48,9 +48,11 @@ class Comments extends React.Component {
     commentCard = () => {
         return this.state.comments.map(comment => {
             let user = this.state.users.find(user => comment.user_id === user.id)
+            console.log(user)
             return(
-                <div key={comment.id} className='comments__comment'>
-                    <p>{user ? user.username : 'loading'}</p>
+                <div key={comment.id} className='comment'>
+                    {user ? <img className='comment__user-pic' src={user.profile_pic} /> : null}
+                    <p className='comment__user'>{user ? user.username : 'loading'}</p>
                     <p>{comment.content}</p>
                 </div>
             )

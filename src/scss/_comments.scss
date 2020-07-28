@@ -1,11 +1,30 @@
 .comments {
     padding-top: 2rem;
-    width: 50vw;
+    width: 48vw;
+    margin: 0 auto;
+}
 
-    &__comment {
-        padding: 1rem;
-        background-color: $fourth-color;
-        color: $secondary-color;
-        font-weight: bold;
+.comment {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background-color: $fourth-color;
+    color: $secondary-color;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    &__user {
+        color: $primary-color;
+        font-size: 1.4rem;
+        margin-left: 5rem;
+
+        &-pic {
+            width: 3vw;
+            height: auto;
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+            border-radius: 10rem;
+            float: left;
+        }
     }
 }
