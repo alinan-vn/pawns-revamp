@@ -11,6 +11,7 @@ import { saveArticles } from '../src/Actions/articles'
 
 import Landing from './Components/landing/index';
 import Article from './Components/article/index';
+import Login from './Components/account/login/index';
 
 class App extends React.Component {
 
@@ -29,6 +30,7 @@ class App extends React.Component {
       <Router >
         <Route exact path='/' component={Landing} />
         <Route exact path='/article/:id' component={Article} />
+        <Route exact path='/login' component={Login} />
       </ Router>
     )
   }

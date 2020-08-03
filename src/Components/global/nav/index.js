@@ -38,11 +38,11 @@ export default class Nav extends Component {
                         Pawns
                     </a>
                 </li>
-                {/* <li className='nav-li'>
-                    <a className={this.state.navClass} href="/about">
-                        About
+                <li className='nav-li'>
+                    <a className={this.state.navClass} href="/login">
+                        Login
                     </a>
-                </li> */}
+                </li>
             </ul>
         </header>
         )
