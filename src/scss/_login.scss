@@ -1,0 +1,39 @@
+.login {
+    margin-top: 10rem;
+    padding-bottom: 10rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    // &__container {
+    //     font-size: 2rem;
+    // }
+
+    &__text {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $third-color;
+    }
+
+    &__input {
+        font-size: 1.5rem;
+        height: 10vh;
+        width: 40vw;
+        border-radius: 8px;
+        background-color: $secondary-color;
+        color: $third-color;
+    }
+
+    &__submit {
+        padding-top: 2rem;
+
+        &-btn {
+            height: 10vh;
+            width: 10vw;
+            border-radius: 16px;
+            background-color: $fourth-color;
+            font-size: 1.5rem;
+            color: $secondary-color;
+        }
+    }
+}

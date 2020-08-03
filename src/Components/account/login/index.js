@@ -23,19 +23,21 @@ class Login extends React.Component {
     render(){
         return(
             <section className='login'>
-                <div className='login__input-container'>
-                    <div className='login__input'>
-                        <p>Username: </p>
+                <div className='login__container'>
+                    <div>
+                        <p className='login__text'>Username: </p>
                         <input 
-                            onChange={this.handleInput}    
+                            onChange={this.handleInput}   
+                            className='login__input' 
                             name='username' 
                             placeholder='username' 
                         />
                     </div>
-                    <div className='login__input'>
-                        <p>password: </p>
+                    <div>
+                        <p className='login__text'>password: </p>
                         <input 
                             onChange={this.handleInput}
+                            className='login__input'
                             name='password' 
                             placeholder='password' 
                             type='password' 
